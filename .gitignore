@@ -1,0 +1,22 @@
+# Build artifacts
+bin/
+obj/
+
+# User secrets
+secrets.json
+*.user
+*.suo
+
+# Visual Studio Code
+.vscode/
+
+# Docker
+.env
+Dockerfile
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Publish output
+/app/
