@@ -1,8 +1,17 @@
+# Build artifacts
 **/bin/
 **/obj/
+
+# User-specific files
 **/*.user
 **/*.suo
+
+# IDE and editor folders
 .vscode/
-Dockerfile
+
+# Git
 .git/
 .gitignore
+
+# Secrets (agar kerak bo‘lsa)
+.env
