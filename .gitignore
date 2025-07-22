@@ -10,10 +10,6 @@ secrets.json
 # Visual Studio Code
 .vscode/
 
-# Docker
-.env
-Dockerfile
-
 # OS junk
 .DS_Store
 Thumbs.db
