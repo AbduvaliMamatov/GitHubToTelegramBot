@@ -10,6 +10,7 @@ var builder = Host.CreateDefaultBuilder(args)
         {
             services.AddControllers(); // Web API controllerlar uchun
             services.AddSingleton<TelegramService>();
+            services.AddHostedService<GistMonitorService>(); // ✅ Gist kuzatuv servisi
         });
 
         webBuilder.Configure(app =>
@@ -28,5 +29,4 @@ var app = builder.Build();
 var telegram = app.Services.GetRequiredService<TelegramService>();
 await telegram.SendMessageAsync("✅ Bot Railway'dan muvaffaqiyatli ishga tushdi!");
 
-// app.Run() WebHost ichida bo'lgani uchun bu yerda *yo‘q*
 await app.RunAsync();
