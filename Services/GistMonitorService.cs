@@ -23,6 +23,7 @@ public class GistMonitorService : BackgroundService
         _logger.LogInformation("🔁 GistMonitorService ishga tushdi.");
 
         using var httpClient = new HttpClient();
+        httpClient.DefaultRequestHeaders.UserAgent.ParseAdd("GitHubToTelegramBot/1.0"); 
 
         while (!stoppingToken.IsCancellationRequested)
         {
