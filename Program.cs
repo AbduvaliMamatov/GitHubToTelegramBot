@@ -8,9 +8,9 @@ var builder = Host.CreateDefaultBuilder(args)
     {
         webBuilder.ConfigureServices(services =>
         {
-            services.AddControllers(); // Web API controllerlar uchun
+            services.AddControllers();
             services.AddSingleton<TelegramService>();
-            services.AddHostedService<GistMonitorService>(); // ✅ Gist kuzatuv servisi
+            services.AddHostedService<GistMonitorService>(); // 👈 BU SHART!
         });
 
         webBuilder.Configure(app =>
@@ -22,7 +22,7 @@ var builder = Host.CreateDefaultBuilder(args)
             });
         });
     })
-    .UseConsoleLifetime(); // Bu serverni to'liq ishga tushiradi (ctrl+C to'xtatadi)
+    .UseConsoleLifetime();
 
 var app = builder.Build();
 
