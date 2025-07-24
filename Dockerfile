@@ -4,8 +4,9 @@ WORKDIR /src
 COPY . .
 RUN dotnet publish GitHubToTelegramBot.csproj -c Release -o /app
 
-# 2️⃣ Runtime bosqichi
-FROM mcr.microsoft.com/dotnet/runtime:8.0
+# 2️⃣ Runtime bosqichi — TO‘G‘RI IMAGE: aspnet
+FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /app
 COPY --from=build /app .
+
 ENTRYPOINT ["dotnet", "GitHubToTelegramBot.dll"]
