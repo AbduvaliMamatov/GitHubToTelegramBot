@@ -58,7 +58,7 @@ public class GistMonitorService : BackgroundService
                     if (_lastGistId != gistId)
                     {
                         _lastGistId = gistId;
-                        var msg = $"📝 *Yangi Gist yaratildi!*\n\n📄 *{description}*\n🔗 [Ko‘rish]({htmlUrl})";
+                        var msg = $"📝 *Yangi maqola yaratildi!*\n\n📄 *{description}*\n🔗 [Ko‘rish uchun havola]({htmlUrl})";
                         await _telegram.SendMessageAsync(msg);
                         _logger.LogInformation("📬 Yangi gist Telegram'ga yuborildi.");
                     }
